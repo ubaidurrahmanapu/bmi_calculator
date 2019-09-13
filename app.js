@@ -3,8 +3,7 @@ function bmi() {
     var h = document.getElementById("height").value;
     var w = document.getElementById("weight").value;
     var n = document.getElementById("name").value;
-    var x = w / h**2;
-    // x = x ? x : 0;
+    var x = w / Math.pow(h, 2);
 
     if (h == "") {
         alert("Please enter height");
@@ -21,14 +20,12 @@ function bmi() {
         return false;
     };
 
-    document.write("<span style=\"color:green; font-size:60px; display:flex; align-items: center; height:100%; justify-content:center; text-align:center;\">" + " Your BMI is " +  x + "<br>"  );
+    document.write("<span style=\"color:green; font-size:60px; display:flex; align-items: center; height:100%; justify-content:center; text-align:center;\">" + " Your BMI is " + x.toFixed(2) + "<br>"  );
     if (x > 25) {
-           document.write(n + " you are overweight");
-        } else {
-             document.write(n + " you are not overweight");
-        }
-    
-
+        document.write(n + " you are overweight");
+    } else {
+        document.write(n + " you are not overweight");
+    }
 }
 
 
